@@ -1,3 +1,5 @@
+![](https://camo.githubusercontent.com/f34a8251dc2c9f10b7f3ed402ebc23ebb5e467f0047a2a7d80a55bc6ae937497/68747470733a2f2f692e696d6775722e636f6d2f766275796d66362e706e67)
+
 # Growtopia Resprite Project Launcher
 
 The GTRP Launcher is a versatile launcher that controls and launches GTRP, a Growtopia pseudomod that allows loading custom resprites. GTRP Launcher has built-in features to install, delete, toggle, and load custom Growtopia resprites.
