@@ -17,7 +17,7 @@ DetectHiddenWindows, On
 ;              |           _                 _                   |                   ;
 ;              |          | |   ___  __ _ __| |___ _ _           |                   ;
 ;              |          | |__/ _ \/ _` / _` / -_) '_|          |                   ;
-;              |          |____\___/\__,_\__,_\___|_|            |	             ;
+;              |          |____\___/\__,_\__,_\___|_|            |	                 ;
 ;              |                                                 |                   ;
 ;              +-------------------------------------------------+                   ;
 ; -------------------- Growtopia Resprite Project Launcher ------------------------- ;
@@ -112,6 +112,7 @@ initcheck.Push(".GTRP\Part1")
 initcheck.Push(".GTRP\Part2")
 initcheck.Push(".GTRP\pssuspend.exe")
 initcheck.Push(".GTRP\pssuspend64.exe")
+initcheck.Push(".GTRP\UnRAR.exe")
 initerror := 0
 Loop
 {
@@ -268,8 +269,8 @@ GInstall: ; ---------- Install Package ---------- ;
 Gosub, gdisable
 FileRemoveDir, %A_WorkingDir%\.GTRP\temp\, 1
 gtext(" - GTRP Resprite Package Installation - ")
-gtext("Select a resprite package to install (*.gtrp; *.gpak)")
-FileSelectFile, FPath, , , Select a resprite package, Growtopia Resprite Package (*.gtrp; *.gpak)
+gtext("Select a resprite package to install (*.gpak; *.gtrp)")
+FileSelectFile, FPath, , , Select a resprite package, Growtopia Resprite Package (*.gpak; *.gtrp)
 if(!FPath)
 {
 	gtext("Installation cancelled")
@@ -277,22 +278,47 @@ if(!FPath)
 	Return
 }
 SplitPath, FPath, FName, FDir, FExt, FTName, FDrive
-if(FExt != "gtrp" and FExt != "gpak")
+gtext("Extracting " . FName . "...")
+FileCreateDir, %A_WorkingDir%\.GTRP\temp\
+
+if(FExt = "gpak")
+{
+	FileCopy, %FPath%, %A_WorkingDir%\.GTRP\temp\%FTName%.zip, 1
+	RunWait PowerShell.exe -Command Expand-Archive -LiteralPath '%A_WorkingDir%\.GTRP\temp\%FTName%.zip' -DestinationPath '%A_WorkingDir%\.GTRP\temp\',, Hide
+	if not FileExist(A_WorkingDir . "\.GTRP\temp\data.g")
+	{
+		FileCopy, %FPath%, %A_WorkingDir%\.GTRP\temp\%FTName%.rar, 1
+		RunWait %ComSpec% /c unrar x -r temp\%FTName%.rar temp, %A_WorkingDir%\.GTRP\, Hide
+		if not FileExist(A_WorkingDir . "\.GTRP\temp\data.g")
+		{
+			gtext("Invalid GTRP resprite package! Installation cancelled")
+			Gosub, GInstall_end
+			Return
+		}
+	}
+	gtext("File Type : GTRP Universal Package (.gpak)")
+}
+else if(FExt = "gtrp")
+{
+	FileCopy, %FPath%, %A_WorkingDir%\.GTRP\temp\%FTName%.zip, 1
+	RunWait PowerShell.exe -Command Expand-Archive -LiteralPath '%A_WorkingDir%\.GTRP\temp\%FTName%.zip' -DestinationPath '%A_WorkingDir%\.GTRP\temp\',, Hide
+	if not FileExist(A_WorkingDir . "\.GTRP\temp\data.g")
+	{
+		gtext("Invalid GTRP resprite package! Installation cancelled")
+		Gosub, GInstall_end
+		Return
+	}
+	gtext("File Type : Growtopia Resprite Zipped Package (.gtrp) (Legacy)")
+}
+else
 {
 	gtext("Unknown file extension! Installation cancelled")
 	Gosub, GInstall_end
 	Return
 }
-gtext("Extracting " . FName . "...")
-FileCreateDir, %A_WorkingDir%\.GTRP\temp\
-FileCopy, %FPath%, %A_WorkingDir%\.GTRP\temp\%FTName%.zip, 1
-RunWait PowerShell.exe -Command Expand-Archive -LiteralPath '%A_WorkingDir%\.GTRP\temp\%FTName%.zip' -DestinationPath '%A_WorkingDir%\.GTRP\temp\',, Hide
-if not FileExist(A_WorkingDir . "\.GTRP\temp\data.g")
-{
-	gtext("Invalid GTRP resprite package! Installation cancelled")
-	Gosub, GInstall_end
-	Return
-}
+
+
+
 FileReadLine, RPPackageName, %A_WorkingDir%\.GTRP\temp\data.g, 1
 if(!RPPackageName)
 	RPPackageName := FName
@@ -741,7 +767,6 @@ GuiControl, Disable, GSet1
 GuiControl, Disable, GSet2
 GuiControl, Disable, GSet3
 GuiControl, Disable, GSet4
-GuiControl, Disable, GClose
 Return
 
 genable: ; ---------- genable ---------- ;
@@ -754,7 +779,6 @@ GuiControl, Enable, GSet1
 GuiControl, Enable, GSet2
 GuiControl, Enable, GSet3
 GuiControl, Enable, GSet4
-GuiControl, Enable, GClose
 GRPIndex := 0
 Return
 
