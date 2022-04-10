@@ -4,7 +4,7 @@
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 #Include %A_ScriptDir%\.GTRP\RunAsTask.ahk
-#SingleInstance Force
+#SingleInstance Off
 DetectHiddenWindows, On
 
 ;              +-------------------------------------------------+                   ;       
@@ -17,12 +17,12 @@ DetectHiddenWindows, On
 ;              |           _                 _                   |                   ;
 ;              |          | |   ___  __ _ __| |___ _ _           |                   ;
 ;              |          | |__/ _ \/ _` / _` / -_) '_|          |                   ;
-;              |          |____\___/\__,_\__,_\___|_|            |	                 ;
+;              |          |____\___/\__,_\__,_\___|_|            |	             ;
 ;              |                                                 |                   ;
 ;              +-------------------------------------------------+                   ;
 ; -------------------- Growtopia Resprite Project Launcher ------------------------- ;
 ;                               Made by SadFaceMan                                   ;
-                                 Version := "3.0"
+                                 Version := "3.1"
 ;                     Powered by Growtopia Resprite Project                          ;
 
 Global textDelay := 50
@@ -697,6 +697,8 @@ Loop
 	FileCopyDir, %A_WorkingDir%\.GTRP\Resprites\%FName%\resprite\, %A_WorkingDir%\, 1
 	FileCopyDir, %A_WorkingDir%\.GTRP\Resprites\%FName%\resprite\, %A_WorkingDir%\cache\, 1
 	FileCopyDir, %A_WorkingDir%\.GTRP\Resprites\%FName%\resprite\, %A_WorkingDir%\.GTRP\cache, 1
+	If FileExist(A_WorkingDir . "\.GTRP\cache\cache\")
+		FileCopyDir, %A_WorkingDir%\.GTRP\cache\cache\, %A_WorkingDir%\.GTRP\cache\, 1
 	gtext(FName . " loaded")
 }
 gtext("")
@@ -707,6 +709,8 @@ gtext("Loading vCache...")
 Loop, Files, %A_WorkingDir%\.GTRP\switch\*, R
 {
 	FName := StrReplace(A_LoopFileName, "-", "\")
+	if(FName = "cache")
+		FName := ""
 	FileRead, Part1, %A_WorkingDir%\.GTRP\Part1
 	FileRead, Part2, %A_WorkingDir%\.GTRP\Part2
 	FullPart := Part1 . "cache\" . FName . Part2
