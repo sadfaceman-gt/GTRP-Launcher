@@ -21,9 +21,14 @@ GTRP Launcher currently only supports Windows.
     + This is usually located in `C:\Users\...\AppData\Local\Growtopia`
     + To find your Growtopia installation folder, right click the Growtopia shortcut on your desktop and click "Open file location"
 4. Extract the contents of `GTRP Launcher.zip` to `Growtopia`
-5. Run GTRP Launcher.ahk
-    + `Growtopia.exe` will be run by the launcher itself.
+5. Run `VC_redist.64.exe`
+    + This will install VC runtime libraries used by GTRP Client
+    + Additionally the x86 libraries can be installed <a href="https://aka.ms/vs/17/release/vc_redist.x86.exe" target=_blank>here</a>
+6. Run `GTRP Launcher.ahk`
+    + `Growtopia.exe` will be run by the client itself.
 
-For instructions on how to create and install resprites, please visit the wiki.
+For instructions on how to use the launcher, create and install resprites, please <a href="https://github.com/sadfaceman-gt/GTRP-Launcher/wiki" target=_blank>visit the wiki.</a>
+
+Official resprites can be found <a href="https://github.com/sadfaceman-gt/GTRP-Launcher-Resprites" target=_blank>here</a>
 
 > Powered by Growtopia Resprite Project - All resprites are "client-side" modifications. Modified textures will only appear on your client, and everyone else will not see the resprite, unless they also have the same resprites.
