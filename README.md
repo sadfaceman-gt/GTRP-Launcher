@@ -7,10 +7,6 @@ The GTRP Launcher is a versatile launcher that controls and launches GTRP, a Gro
 GTRP Launcher currently only supports Windows.
 
 #### GTRP Launcher by sadfaceman
-<a href="https://www.growtopiagame.com" target=_blank><img src="https://drive.google.com/thumbnail?id=1wKIMyhVIyLEH5YcAuSMGGoluBI1CbukC" alt="Discord" width="16" height="16" style="float:left">**sadfaceman (GrowID)**</img>
-
-<a href="https://www.growtopiagame.com/forums/member/375839-astigmatisme" target=_blank><img src="https://drive.google.com/thumbnail?id=1wKIMyhVIyLEH5YcAuSMGGoluBI1CbukC" alt="Discord" width="16" height="16" style="float:left">**Astigmatisme (Forums)**</img>
-
 <a href="https://www.discord.com" target=_blank><img src="https://drive.google.com/thumbnail?id=1vBtDJR6I7AmdS3tf9UtPhj2dWnrFEgsE" alt="Discord" width="16" height="16" style="float:left">**SadFaceMan#8661**</img>
 
 ## How to install
