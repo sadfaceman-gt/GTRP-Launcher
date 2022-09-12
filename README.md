@@ -2,7 +2,7 @@
 
 # Growtopia Resprite Project Launcher
 
-The GTRP Launcher is a versatile tool that launches GTRP Client, a Growtopia pseudomod that allows loading custom resprites. GTRP Launcher has built-in features to install, delete, toggle, and load custom Growtopia resprites.
+GTRP Launcher is a versatile Growtopia tool that loads custom texture packs and resprites. As an all-in-one packaged tool, it can install, delete, toggle, and load custom Growtopia texture packs, as well as download community-made ones from a custom workshop.
 
 GTRP Launcher currently only supports Windows.
 
