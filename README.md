@@ -2,12 +2,12 @@
 
 # Growtopia Resprite Project Launcher
 
-The GTRP Launcher is a versatile launcher that controls and launches GTRP, a Growtopia pseudomod that allows loading custom resprites. GTRP Launcher has built-in features to install, delete, toggle, and load custom Growtopia resprites.
+The GTRP Launcher is a versatile tool that launches GTRP Client, a Growtopia pseudomod that allows loading custom resprites. GTRP Launcher has built-in features to install, delete, toggle, and load custom Growtopia resprites.
 
 GTRP Launcher currently only supports Windows.
 
 #### GTRP Launcher by sadfaceman
-<a href="https://www.discord.com" target=_blank><img src="https://drive.google.com/thumbnail?id=1vBtDJR6I7AmdS3tf9UtPhj2dWnrFEgsE" alt="Discord" width="16" height="16" style="float:left">**SadFaceMan#8661**</img>
+<a href="https://discord.gg/2QY3dck9RY" target=_blank><img src="https://drive.google.com/thumbnail?id=1vBtDJR6I7AmdS3tf9UtPhj2dWnrFEgsE" alt="Discord" width="16" height="16" style="float:left">**Sad's Mulriverse of Sadness**</img>
 
 ## How to install
 ### Windows
@@ -17,11 +17,10 @@ GTRP Launcher currently only supports Windows.
     + This is usually located in `C:\Users\...\AppData\Local\Growtopia`
     + To find your Growtopia installation folder, right click the Growtopia shortcut on your desktop and click "Open file location"
 4. Extract the contents of `GTRP Launcher.zip` to `Growtopia`
-5. Run `VC_redist.64.exe`
-    + This will install VC runtime libraries used by GTRP Client
-    + Additionally the x86 libraries can be installed <a href="https://aka.ms/vs/17/release/vc_redist.x86.exe" target=_blank>here</a>
-6. Run `GTRP Launcher.ahk`
-    + `Growtopia.exe` will be run by the client itself.
+5. Run `ImageMagick.exe`
+    + This will install ImageMagick libraries used by GTRP Client
+
+To launch GTRP Launcher, simply open `GTRP Launcher.ahk`
 
 For instructions on how to use the launcher, create and install resprites, please <a href="https://github.com/sadfaceman-gt/GTRP-Launcher/wiki" target=_blank>visit the wiki.</a>
 
