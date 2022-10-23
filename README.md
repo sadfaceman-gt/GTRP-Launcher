@@ -7,23 +7,19 @@ GTRP Launcher is a versatile Growtopia tool that loads custom texture packs and 
 GTRP Launcher currently only supports Windows.
 
 #### GTRP Launcher by sadfaceman
-<a href="https://discord.gg/2QY3dck9RY" target=_blank><img src="https://drive.google.com/thumbnail?id=1vBtDJR6I7AmdS3tf9UtPhj2dWnrFEgsE" alt="Discord" width="16" height="16" style="float:left">**Sad's Mulriverse of Sadness**</img>
+<a href="https://discord.gg/2QY3dck9RY" target=_blank><img src="https://drive.google.com/thumbnail?id=1vBtDJR6I7AmdS3tf9UtPhj2dWnrFEgsE" alt="Discord" width="16" height="16" style="float:left">**Sad's Multiverse of Sadness**</img>
 
 ## How to install
 ### Windows
 1. [Install AutoHotkey](https://www.autohotkey.com "Install AutoHotkey")
 2. Close Growtopia if it's running
-3. Open your Growtopia installation folder
-    + This is usually located in `C:\Users\...\AppData\Local\Growtopia`
-    + To find your Growtopia installation folder, right click the Growtopia shortcut on your desktop and click "Open file location"
-4. Extract the contents of `GTRP Launcher.zip` to `Growtopia`
-5. Run `ImageMagick.exe`
-    + This will install ImageMagick libraries used by GTRP Client
+3. Extract the contents of `GTRP Launcher.zip`
+4. Run `GTRP Installer.ahk`
 
-To launch GTRP Launcher, simply open `GTRP Launcher.ahk`
+GTRP Installer will install GTRP Launcher to your Growtopia directory, and a new shortcut will be created on your desktop. To launch GTRP Launcher, simply double click the shortcut.
 
-For instructions on how to use the launcher, create and install resprites, please <a href="https://github.com/sadfaceman-gt/GTRP-Launcher/wiki" target=_blank>visit the wiki.</a>
+For instructions on how to use the launcher, install and use resprites, please <a href="https://github.com/sadfaceman-gt/GTRP-Launcher/wiki" target=_blank>visit the wiki.</a>
 
-Official resprites can be found <a href="https://github.com/sadfaceman-gt/GTRP-Launcher-Resprites" target=_blank>here</a>
+Workshop resprites can be found <a href="https://github.com/sadfaceman-gt/GTRP-Launcher-Resprites" target=_blank>here</a>
 
 > Powered by Growtopia Resprite Project - All resprites are "client-side" modifications. Modified textures will only appear on your client, and everyone else will not see the resprite, unless they also have the same resprites.
